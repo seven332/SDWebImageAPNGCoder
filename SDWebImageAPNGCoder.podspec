@@ -27,7 +27,20 @@ In 5.x, SDWebImage will replace this as built-in APNG coder instead
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
 
-  s.source_files = 'SDWebImageAPNGCoder/Classes/**/*'
-  s.dependency 'SDWebImage/Core', '~> 4.2'
-  
+  s.default_subspec = 'Coder'
+
+  s.subspec 'Coder' do |sub|
+    sub.requires_arc = true
+    sub.source_files = 'SDWebImageAPNGCoder/Classes/**/*.{h,m,swift}'
+    sub.dependency 'SDWebImage', '~> 5.0'
+    sub.dependency 'SDWebImageAPNGCoder/apng'
+  end
+
+  s.subspec 'apng' do |sub|
+    sub.requires_arc = false
+    sub.libraries = "z"
+    sub.source_files = 'apng/**/*.{h,c}'
+    sub.public_header_files = 'apng/png.h', 'apng/pngconf.h', 'apng/pnglibconf.h'
+    sub.compiler_flags = '-DHAVE_CONFIG_H'
+  end
 end

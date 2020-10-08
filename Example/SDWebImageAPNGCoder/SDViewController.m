@@ -7,9 +7,8 @@
 //
 
 #import "SDViewController.h"
-#import <SDWebImageAPNGCoder/SDWebImageAPNGCoder.h>
+#import <SDWebImageAPNGCoder/SDImageAPNGCoder.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-#import <SDWebImage/SDWebImageCodersManager.h>
 
 @interface SDViewController ()
 
@@ -21,8 +20,8 @@
 {
     [super viewDidLoad];
     
-    SDWebImageAPNGCoder *APNGCoder = [SDWebImageAPNGCoder sharedCoder];
-    [[SDWebImageCodersManager sharedInstance] addCoder:APNGCoder];
+    SDImageAPNGCoder2 *APNGCoder = [SDImageAPNGCoder2 sharedCoder];
+    [[SDImageCodersManager sharedManager] addCoder:APNGCoder];
     NSURL *staticPNGURL = [NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png"];
     NSURL *animatedAPNGURL = [NSURL URLWithString:@"http://apng.onevcat.com/assets/elephant.png"];
     

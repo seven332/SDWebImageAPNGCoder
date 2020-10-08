@@ -1,8 +1,14 @@
 PODS:
   - Expecta (1.0.6)
-  - SDWebImage/Core (4.3.3)
-  - SDWebImageAPNGCoder (0.1.0):
-    - SDWebImage/Core (~> 4.2)
+  - SDWebImage (5.9.2):
+    - SDWebImage/Core (= 5.9.2)
+  - SDWebImage/Core (5.9.2)
+  - SDWebImageAPNGCoder (0.1.1):
+    - SDWebImageAPNGCoder/Coder (= 0.1.1)
+  - SDWebImageAPNGCoder/apng (0.1.1)
+  - SDWebImageAPNGCoder/Coder (0.1.1):
+    - SDWebImage (~> 5.0)
+    - SDWebImageAPNGCoder/apng
   - Specta (1.0.7)
 
 DEPENDENCIES:
@@ -11,7 +17,7 @@ DEPENDENCIES:
   - Specta
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Expecta
     - SDWebImage
     - Specta
@@ -22,10 +28,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  SDWebImageAPNGCoder: 3308255d7f38f6e6e9376cfe3a1eb7c05a3f63d0
+  SDWebImage: 0b42b8719ab0c5257177d5894306e8a336b21cbb
+  SDWebImageAPNGCoder: cda016737727e30ccb565bb5bd1cd41307ff0174
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
 PODFILE CHECKSUM: c48847c3f7b84ae1a5c5b27d0d9e53f6eabe8175
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.9.3
